@@ -143,7 +143,7 @@ verticalTabsetPanel <- function(..., selected = NULL, id = NULL, color = "#11244
       "#%s-tabbable > div.vrtc-tab-panel-menu div.list-group>a.active,
       #%s-tabbable > div.vrtc-tab-panel-menu div.list-group>a.active .glyphicon,
       #%s-tabbable > div.vrtc-tab-panel-menu div.list-group>a.active .fa{
-       background-color: ",background_active," !important; background-image: %s !important; color: #ffffff !important;
+       background-color: ", background_active ," !important; background-image: %s !important; color: #ffffff !important;
       }"),
       id, id, id, color
     )),
