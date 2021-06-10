@@ -57,7 +57,7 @@
 #' shinyApp(ui, server)
 #'
 #' }
-verticalTabsetPanel <- function(..., selected = NULL, id = NULL, color = "#112446", contentWidth = 9, menuSide = "left") {
+verticalTabsetPanel <- function(..., selected = NULL, id = NULL, color = "#112446", contentWidth = 9, menuSide = "left", background_active = "#112446") {
   stopifnot(is.numeric(contentWidth))
   stopifnot(contentWidth >= 1, contentWidth <= 12)
   menuSide <- match.arg(menuSide, choices = c("right", "left"))
@@ -139,12 +139,12 @@ verticalTabsetPanel <- function(..., selected = NULL, id = NULL, color = "#11244
       #%s-tabbable > div.vrtc-tab-panel-menu div.list-group>a .fa {color: %s !important;}",
       id, id, color
     )),
-    HTML(sprintf(
+    HTML(sprintf(paste0(
       "#%s-tabbable > div.vrtc-tab-panel-menu div.list-group>a.active,
       #%s-tabbable > div.vrtc-tab-panel-menu div.list-group>a.active .glyphicon,
       #%s-tabbable > div.vrtc-tab-panel-menu div.list-group>a.active .fa{
-       background-color: green !important; background-image: %s !important; color: #ffffff !important;
-      }",
+       background-color: ",background_active," !important; background-image: %s !important; color: #ffffff !important;
+      }"),
       id, id, id, color
     )),
     HTML(sprintf(
